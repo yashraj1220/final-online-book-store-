@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBooks - Online Education Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-book"></i>
+                <span>Book Store</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#books">Books</a>
+                <a href="#courses">Courses</a>
+                <a href="#" class="wishlist-btn">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count">0</span>
+                </a>
+                <a href="#" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="auth-buttons">
+                    <!-- Removed Login Button -->
+                </div>
+                <div class="user-profile" style="display: none;">
+                    <button class="profile-btn">
+                        <i class="fas fa-user-circle"></i>
+                        <span class="username">User</span>
+                    </button>
+                    <div class="profile-dropdown">
+                        <a href="#" class="my-orders">My Orders</a>
+                        <a href="#" class="my-wishlist">My Wishlist</a>
+                        <a href="#" class="logout-btn">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Discover Your Next Learning Adventure</h1>
+                <p>Explore thousands of educational books and courses</p>
+                <div class="hero-search">
+                    <input type="text" placeholder="What do you want to learn today?">
+                    <button class="search-btn">Search</button>
+                </div>
+                <div class="hero-buttons">
+                    <button class="view-books-btn">Browse Books</button>
+                    <button class="view-courses-btn">Explore Courses</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories">
+            <h2>Browse by Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Computer Science</h3>
+                    <p>Learn coding fundamentals and advanced techniques</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Science</h3>
+                    <p>Master data analysis and machine learning</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Networking</h3>
+                    <p>Explore computer networks and security</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Dev</h3>
+                    <p>Build iOS and Android applications</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Computing</h3>
+                    <p>Learn AWS, Azure, and cloud services</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI & ML</h3>
+                    <p>Artificial Intelligence and Machine Learning</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>Master digital security and ethical hacking</p>
+                </div>
+                <div class="category-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>DevOps</h3>
+                    <p>Learn development operations and tools</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="books" class="product-section">
+            <div class="section-header">
+                <h2><i class="fas fa-book"></i> Educational Books</h2>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>Category:</label>
+                    <select class="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="AI & ML">AI & ML</option>
+                        <option value="Networking">Networking</option>
+                        <option value="Cloud Computing">Cloud Computing</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="DevOps">DevOps</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By:</label>
+                    <select class="sort-filter">
+                        <option value="name">Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+            <div class="books-grid product-grid"></div>
+        </section>
+
+        <section id="courses" class="product-section">
+            <div class="section-header">
+                <h2><i class="fas fa-graduation-cap"></i> Online Courses</h2>
+                <div class="view-options">
+                    <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                    <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            <div class="filter-bar">
+                <div class="filter-group">
+                    <label>Category:</label>
+                    <select class="category-filter">
+                        <option value="all">All Categories</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="AI & ML">AI & ML</option>
+                        <option value="Networking">Networking</option>
+                        <option value="Cloud Computing">Cloud Computing</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="DevOps">DevOps</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By:</label>
+                    <select class="sort-filter">
+                        <option value="name">Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+            <div class="courses-grid product-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-envelope"></i> info@edubooks.com</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EduBooks. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Wishlist Modal
+    <div id="wishlistModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-heart"></i> My Wishlist</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="wishlist-items">
+                <!-- Wishlist items will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    
+            </div> -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
